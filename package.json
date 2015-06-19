@@ -7,7 +7,7 @@
     "test": "node ./build.js && ./node_modules/mocha/bin/mocha",
     "prepublish": "node ./build.js",
     "preversion": "npm test",
-    "postversion": "node ./build.js && git add -f index.js && git commit -m 'force add index.js before publish'"
+    "version": "node ./build.js && git add -f index.js && git commit -m 'force add index.js before publish'"
   },
   "repository": {
     "type": "git",
