@@ -1,6 +1,6 @@
 {
   "name": "duration-parser",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "parse durations written in plain english",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,9 @@
     "url": "https://github.com/jamestalmage/duration-parser/issues"
   },
   "homepage": "https://github.com/jamestalmage/duration-parser",
-  "files":["index.js"],
+  "files": [
+    "index.js"
+  ],
   "devDependencies": {
     "mocha": "^2.2.5",
     "pegjs": "^0.8.0"
