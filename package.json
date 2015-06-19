@@ -4,8 +4,8 @@
   "description": "parse time durations written in plain english",
   "main": "index.js",
   "scripts": {
-    "test": "node ./build.js && ./node_modules/mocha/bin/mocha",
-    "prepublish": "npm test"
+    "test": "./node_modules/mocha/bin/mocha",
+    "prepublish": "npm test && node build.js"
   },
   "repository": {
     "type": "git",

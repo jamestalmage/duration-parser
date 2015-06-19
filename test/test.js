@@ -1,7 +1,10 @@
 describe('duration-parser', function(){
-
-  var parseDuration = require('..');
+  var fs = require('fs');
+  var peg = require('pegjs');
   var assert = require('assert');
+
+  var grammar = fs.readFileSync(__dirname + '/../grammar.pegjs', 'utf-8');
+  var parser = peg.buildParser(grammar);
 
   var tests = [
     ['1ms', '1 millisecond', 1],
@@ -27,7 +30,7 @@ describe('duration-parser', function(){
 
   function makeTest(input, expected) {
     it(input + ' = ' + expected, function() {
-      assert.equal(parseDuration(input), expected);
+      assert.equal(parser.parse(input), expected);
     });
   }
 });
