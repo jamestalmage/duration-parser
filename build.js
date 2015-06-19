@@ -12,3 +12,5 @@ fs.writeFileSync(__dirname + '/index.js',
   'module.exports = ' + parserSource,
   'utf-8'
 );
+
+console.log('built version: ' + pkg.version);
