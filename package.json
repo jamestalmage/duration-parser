@@ -1,6 +1,6 @@
 {
   "name": "duration-parser",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "parse durations written in plain english",
   "main": "index.js",
   "scripts": {
