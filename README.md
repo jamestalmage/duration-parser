@@ -6,6 +6,8 @@ parse time durations written in plain english
 [![Dependency Status](https://david-dm.org/jamestalmage/duration-parser.svg)](https://david-dm.org/jamestalmage/duration-parser) 
 [![devDependency Status](https://david-dm.org/jamestalmage/duration-parser/dev-status.svg)](https://david-dm.org/jamestalmage/duration-parser#info=devDependencies)
 
+[![NPM](https://nodei.co/npm/duration-parser.png)](https://www.npmjs.com/package/duration-parser/)
+
 # usage
 
 It`s a function that parses a duration string and returns the number of milliseconds that duration represents.
@@ -18,7 +20,6 @@ parseDuration(`2 seconds`); // 2000
 parseDuration(`3.4s`);      // 3400
 
 parseDuration(`1 minute 9 seconds`); // 69000
-
 ```
 
 It understands the following time constructs and abbreviations.
