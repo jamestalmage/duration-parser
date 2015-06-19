@@ -1,4 +1,4 @@
-// duration-parser 0.0.8
+// duration-parser 0.0.9
 // https://github.com/jamestalmage/duration-parser
 module.exports = (function() {
   /*
