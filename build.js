@@ -8,8 +8,11 @@ var parserSource = peg.buildParser(grammar, {output:'source'});
 
 fs.writeFileSync(__dirname + '/index.js',
   '// duration-parser ' + pkg.version + '\n' +
-  '// ' + pkg.homepage + '\n' +
-  'module.exports = ' + parserSource,
+  '// ' + pkg.homepage + '\n\n' +
+  'var parser = ' + parserSource + ';\n\n' +
+  'parser.parse.SyntaxError = parser.SyntaxError;\n' +
+  'module.exports = parser.parse.bind(parser);\n'
+  ,
   'utf-8'
 );
 

@@ -1,12 +1,11 @@
 {
   "name": "duration-parser",
   "version": "0.0.9",
-  "description": "parse durations written in plain english",
+  "description": "parse time durations written in plain english",
   "main": "index.js",
   "scripts": {
     "test": "node ./build.js && ./node_modules/mocha/bin/mocha",
-    "prepublish": "node ./build.js",
-    "preversion": "npm test"
+    "prepublish": "npm test"
   },
   "repository": {
     "type": "git",
