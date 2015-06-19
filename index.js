@@ -1,4 +1,4 @@
-// duration-parser 0.0.9
+// duration-parser 0.0.10
 // https://github.com/jamestalmage/duration-parser
 
 var parser = (function() {
