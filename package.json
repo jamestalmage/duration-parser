@@ -4,9 +4,10 @@
   "description": "parse durations written in plain english",
   "main": "index.js",
   "scripts": {
-    "test": "npm run prepublish && ./node_modules/mocha/bin/mocha",
+    "test": "node ./build.js && ./node_modules/mocha/bin/mocha",
     "prepublish": "node ./build.js",
-    "preversion": "node ./build.js && git add -f index.js"
+    "preversion": "npm test",
+    "postversion": "node ./build.js && git add -f index.js"
   },
   "repository": {
     "type": "git",
