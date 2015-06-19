@@ -1,4 +1,7 @@
 describe('duration-parser', function(){
+
+  console.log(process.env);
+
   var parser = require('..');
   var assert = require('assert');
 
