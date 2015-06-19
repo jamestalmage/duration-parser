@@ -10,7 +10,7 @@ parse time durations written in plain english
 
 # usage
 
-It`s a function that parses a duration string and returns the number of milliseconds that duration represents.
+It's a function that parses a duration string and returns the number of milliseconds that duration represents.
 
 ```javascript
 var parseDuration = require(`duration-parser`);      
