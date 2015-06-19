@@ -1,6 +1,5 @@
 describe('duration-parser', function(){
-
-  var parse = require('../compiled-grammar').parse;
+  var parser = require('..');
   var assert = require('assert');
 
   var tests = [
@@ -27,7 +26,7 @@ describe('duration-parser', function(){
 
   function makeTest(input, expected) {
     it(input + ' = ' + expected, function() {
-      assert.equal(parse(input), expected);
+      assert.equal(parser.parse(input), expected);
     });
   }
 });

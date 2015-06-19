@@ -4,7 +4,8 @@
   "description": "parse durations written in plain english",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha"
+    "test": "npm run prepublish && ./node_modules/mocha/bin/mocha",
+    "prepublish": "node ./build.js"
   },
   "repository": {
     "type": "git",
@@ -16,6 +17,7 @@
     "url": "https://github.com/jamestalmage/duration-parser/issues"
   },
   "homepage": "https://github.com/jamestalmage/duration-parser",
+  "files":["index.js"],
   "devDependencies": {
     "mocha": "^2.2.5",
     "peg": "0.0.0"
