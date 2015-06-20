@@ -15,11 +15,14 @@ It's a function that parses a duration string and returns the number of millisec
 ```javascript
 var parseDuration = require(`duration-parser`);      
 
-parseDuration(`1 second`);  // 1000
-parseDuration(`2 seconds`); // 2000
-parseDuration(`3.4s`);      // 3400
+parseDuration('1 second');  // 1000
+parseDuration('2 seconds'); // 2000
+parseDuration('3.4s');      // 3400
 
-parseDuration(`1 minute 9 seconds`); // 69000
+parseDuration('1 minute 9 seconds');     //  69000
+parseDuration('1 minute - 10 seconds');  //  50000
+parseDuration('-1 minute + 10 seconds'); // -50000
+parseDuration('-1 minute   10 seconds'); // -70000
 ```
 
 It understands the following time constructs and abbreviations.
@@ -30,6 +33,23 @@ It understands the following time constructs and abbreviations.
   * **hours**: `hours` , `hour` , `hrs` , `hr` , `h` 
   * **days**: `days` , `day` , `d`
   * **weeks**: `weeks` , `week` , `wks` , `wk` , `w`
+  
+# `+` / `-` and order of operations
+
+`+` and `-` operators perform addition and subtraction as expected.
+Concatenating time measurements together (with or without whitespace) will perform addition. 
+
+```javascript
+'1h3s' == '1h + 3s' == '1 hour 3 seconds'
+```
+
+Concatenation has higher precedence than the `+` or `-` operators, so:
+
+```javascript
+'1 week - 2 days 6 hours' == '1 week - (2 days + 6 hours)'
+```
+
+*(parenthesis are not currently supported)*
 
 # releasing
 
