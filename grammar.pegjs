@@ -2,7 +2,16 @@ start
   = time
 
 time
-  = left:timechunk sep* right:time { return left + right; }
+  = left:signed sep* right:time { return left + right; }
+  / signed
+
+signed
+  = '+' sep* time:timestring { return time; }
+  / '-' sep* time:timestring { return -time; }
+  / timestring
+
+timestring
+  = left:timechunk &(!(sep* ['+''-'])) sep* right:timestring { return left + right; }
   / timechunk
 
 timechunk
@@ -42,7 +51,7 @@ number
   / integer
 
 integer "integer"
-  = '-'? [0-9]+ { return parseInt(text(), 10); }
+  = [0-9]+ { return parseInt(text(), 10); }
 
 float "float"
-  = '-'? [0-9]* '.' [0-9]+ { return parseFloat(text(), 10); }
+  = [0-9]* '.' [0-9]+ { return parseFloat(text(), 10); }

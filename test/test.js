@@ -7,7 +7,7 @@ describe('duration-parser', function(){
   var parser = peg.buildParser(grammar);
 
   var tests = [
-    ['1ms', '1 millisecond', 1],
+    ['1ms', '1 millisecond', '+1ms', 1],
     ['2ms', '2 milliseconds', 2],
     ['1 second', '1 sec', '1s', 1000],
     ['2 seconds', '2 secs', '2s', 2000],
@@ -18,7 +18,11 @@ describe('duration-parser', function(){
     ['1 day', '1d', 86400000],
     ['2 days', '2d', 172800000],
     ['1 week', '1 wk', '1w', 604800000],
-    ['2 weeks', '2 wks', '2w', 1209600000]
+    ['2 weeks', '2 wks', '2w', 1209600000],
+    ['1 minute -10 seconds', '2 minutes - 1 minute 10 seconds', 50000],
+    ['-1 minute 10 seconds', -70000],
+    ['1 minute - 10 seconds + 30 milliseconds', 50030],
+    ['1 minute - 10 seconds 30 milliseconds',   49970]
   ];
 
   tests.forEach(function(value){
