@@ -22,7 +22,17 @@ describe('duration-parser', function(){
     ['1 minute -10 seconds', '2 minutes - 1 minute 10 seconds', 50000],
     ['-1 minute 10 seconds', -70000],
     ['1 minute - 10 seconds + 30 milliseconds', 50030],
-    ['1 minute - 10 seconds 30 milliseconds',   49970]
+    ['1 minute - 10 seconds 30 milliseconds',   49970],
+
+    //DOCS: These are the examples from the docs - verify they are correct
+    ['1 second',  1000],
+    ['2 seconds', 2000],
+    ['3.4s',      3400],
+
+    ['1 minute 9 seconds',      69000],
+    ['1 minute - 10 seconds',   50000],
+    ['-1 minute + 10 seconds', -50000],
+    ['-1 minute 10 seconds',   -70000]
   ];
 
   tests.forEach(function(value){
