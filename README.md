@@ -34,7 +34,7 @@ It understands the following time constructs and abbreviations.
   * **days**: `days` , `day` , `d`
   * **weeks**: `weeks` , `week` , `wks` , `wk` , `w`
   
-# `+` / `-` and order of operations
+## `+` / `-` and order of operations
 
 `+` and `-` operators perform addition and subtraction as expected.
 Concatenating time measurements together (with or without whitespace) will perform addition. 
