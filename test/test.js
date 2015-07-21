@@ -7,6 +7,8 @@ describe('duration-parser', function(){
   var parser = peg.buildParser(grammar);
 
   var tests = [
+    ['0', 0],
+
     ['1ms', '1 millisecond', '+1ms', 1],
     ['2ms', '2 milliseconds', 2],
     ['1 second', '1 sec', '1s', 1000],
