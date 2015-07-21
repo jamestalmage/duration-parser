@@ -6,7 +6,7 @@
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha",
     "preversion": "npm test",
-    "version": "node build.js"
+    "version": "node build.js && git add index.js"
   },
   "repository": {
     "type": "git",
