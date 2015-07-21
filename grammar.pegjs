@@ -1,5 +1,6 @@
 start
   = time
+  / '0' { return 0; }
 
 time
   = left:signed sep* right:time { return left + right; }
