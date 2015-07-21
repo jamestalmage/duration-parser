@@ -53,12 +53,8 @@ Concatenation has higher precedence than the `+` or `-` operators, so:
 
 # releasing
 
-  1. ensure your git working directory is clean.
-  2. bump `version` in `package.json` appropriately.
-  3. `npm publish`. This will generate a fresh `index.js` with the correct version header.
-  4. `git add -f index.js package.json`. It is necessary to force add `index.js` since it is ignored by `.gitignore`.
-  5. `git commit -m "version v0.0.0"` (with the correct version number)
-  6. `git tag v0.0.0` (again, with the correct version number)
-  7. `git push`
-  8. `git push --tags`
+  1. ensure your git working directory is clean (`git status`).
+  2. ensure you are running npm `2.13` or later, or `3.1` or later (`npm --version`, `npm i npm@latest`).
+  3. ensure you have `cut-release` installed (`npm i -g cut-release`).
+  4. run `cut-release`.
   

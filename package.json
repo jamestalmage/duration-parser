@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha",
-    "prepublish": "npm test && node build.js"
+    "preversion": "npm test",
+    "version": "node build.js"
   },
   "repository": {
     "type": "git",
